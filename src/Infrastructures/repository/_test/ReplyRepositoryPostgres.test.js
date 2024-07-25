@@ -133,7 +133,7 @@ describe('ReplyRepositoryPostgres', () => {
       await CommentsTableTestHelper.addComment({ id: commentId, threadId, owner: userPayload.id });
       const replyPayload = {
         id: 'reply-123',
-        commentId,
+        commentId: 'comment-123',
         content: 'Example Reply',
         owner: userPayload.id,
         is_delete: false,
