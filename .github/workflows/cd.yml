@@ -16,11 +16,10 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          # password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd ${{ secrets.DIRECTORY_PATH }}
+            cd ~/forum-api-test
             git pull origin master
             npm install
             npm run migrate up
-            pm2 restart ${{ secrets.PM2_APP_NAME }}
+            pm2 restart forum-api-test
