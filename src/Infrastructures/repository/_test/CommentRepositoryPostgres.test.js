@@ -124,7 +124,8 @@ describe('CommentRepositoryPostgres', () => {
         threadId,
         content: 'Example Comment',
         owner: userPayload.id,
-        is_delete: false,
+        // eslint-disable-next-line no-undef
+        is_delete,
       };
       await CommentsTableTestHelper.addComment(commentPayload);
 
